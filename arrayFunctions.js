@@ -9,9 +9,10 @@
  * isArrayLengthOdd([1, 2, 3, 4]) -> flase
  */
 function isArrayLengthOdd(numbers) {
-  // Your code here
+  if (numbers.length%2 === 0) return false;
+  return true
 }
-
+isArrayLengthOdd([1,2,3,7,10]);
 /**
  * isArrayLengthEven(numbers):
  * - receives array `numbers`
@@ -23,9 +24,10 @@ function isArrayLengthOdd(numbers) {
  * isArrayLengthEven([1, 2, 3, 4]) -> true
  */
 function isArrayLengthEven(numbers) {
-  // Your code here
+  if (numbers.length%2 === 0) return true;
+  return false
 }
-
+isArrayLengthEven([1,2,3,7,10]);
 /**
  * addLailaToArray(instructors):
  * - receives array `instructors`
@@ -34,10 +36,12 @@ function isArrayLengthEven(numbers) {
  * e.g.
  * addLailaToArray(["Mshary", "Hasan"]) -> ["Mshary", "Hasan", "Laila"]
  */
+const instructors = ["Ahmad","Sam"];
 function addLailaToArray(instructors) {
-  // Your code here
+  instructors[2]="Laila";
+  return instructors;
 }
-
+addLailaToArray(instructors);
 /**
  * eliminateTeam(teams):
  * - receives array `teams`
@@ -47,8 +51,9 @@ function addLailaToArray(instructors) {
  * eliminateTeam(["Brazil", "Germany", "Italy"]) -> "Italy"
  */
 function eliminateTeam(teams) {
-  // Your code here
+  return teams.pop();
 }
+eliminateTeam(["jordan","China","England"]);
 
 /**
  * secondHalfOfArrayIfItIsEven(fruits):
@@ -60,10 +65,15 @@ function eliminateTeam(teams) {
  * secondHalfOfArrayIfItIsEven(["apple", "orange", "banana", "kiwi"]) -> ["banana", "kiwi"]
  * secondHalfOfArrayIfItIsEven(["apple", "orange", "banana", "kiwi", "blueberry"]) -> []
  */
+const fruits= ["apple", "orange", "banana", "kiwi"];
+let x;
 function secondHalfOfArrayIfItIsEven(fruits) {
-  // Your code here
+  if (fruits.length%2 ===0) 
+  { x= (fruits.slice(((fruits.length)/2) , fruits.length));
+    return x;
+   } return fruits.slice(0,-fruits.length);
 }
-
+secondHalfOfArrayIfItIsEven(fruits);
 /**
  * youGottaCalmDown(shout):
  * - receives a string `shout`
@@ -78,10 +88,19 @@ function secondHalfOfArrayIfItIsEven(fruits) {
  * - Use string method .slice()
  * - Use string method .endsWith()
  */
-function youGottaCalmDown(shout) {
-  // Your code here
-}
+ function youGottaCalmDown(shout) {
 
+  while (shout.endsWith('!')){
+    while (shout.slice(0,-1).endsWith('!')){
+      shout=shout.slice(0,-1);
+    }
+      
+  
+      return shout ;
+    }
+ return shout ;
+}
+youGottaCalmDown("HI!!!!!!!!!!!!");
 module.exports = {
   isArrayLengthOdd,
   isArrayLengthEven,
